@@ -142,7 +142,8 @@ def predict_chance(features):
 
 if predict_btn:
     prediction = predict_chance(features_df)
-    locale.setlocale(locale.LC_MONETARY, 'en_IN')
+    #locale.setlocale(locale.LC_MONETARY, 'en_IN')
+    locale.setlocale(locale.LC_ALL,'en_US.UTF-8')
     st.markdown('From the selected features of the house, the predicted price is: **'+ str(locale.currency(int(prediction), grouping=True)) + '**')
     
     
