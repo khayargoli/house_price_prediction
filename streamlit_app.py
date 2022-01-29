@@ -30,9 +30,9 @@ st.sidebar.title('Feature Input')
 model_file=open("regression.pkl","rb")
 regressor=pickle.load(model_file) # our model
 st.write('Regression model in use: ', regressor)
-area_in_squarefeet = st.sidebar.number_input(label = 'Area of house in Sq.Feet', min_value = 100.0,
-                        max_value =  25000.00,
-                        value = 2000.00,
+area_in_squarefeet = st.sidebar.number_input(label = 'Area of house in Sq.Feet', min_value = 1000.0,
+                        max_value =  2500.00,
+                        value = 1200.00,
                         step = 1.0)
 
 
@@ -47,7 +47,7 @@ number_of_bedroom = st.sidebar.slider(label = 'Total number of Bedroom', min_val
                         step = 1)
 
 number_of_bathroom  = st.sidebar.slider(label = 'Total number of Bathroom', min_value = 1,
-                        max_value = 20 ,
+                        max_value = 15,
                         value = 5,
                         step = 1)
 
@@ -187,7 +187,6 @@ def predict_chance(features):
 
 if predict_btn:
     prediction = predict_chance(features_df)
-    #locale.setlocale(locale.LC_MONETARY, 'en_IN')
     st.markdown('From the selected features of the house, the predicted price is: ** Rs. '+ str(formatNPR(int(prediction))) + '**')
     
     
