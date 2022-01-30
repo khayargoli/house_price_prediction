@@ -53,7 +53,7 @@ number_of_bathroom  = st.sidebar.slider(label = 'Total number of Bathroom', min_
 
 
 
-road_area_in_feet  = st.sidebar.slider(label = 'Road width in Sq.Feet', min_value = 3.0,
+road_area_in_feet  = st.sidebar.slider(label = 'Road width in feet', min_value = 3.0,
                         max_value = 40.0 ,
                         value = 10.0,
                         step = 1.0)
